@@ -1530,6 +1530,17 @@ body {
     line-height: 1.15;
 }
 
+.movie-card__description {
+    min-height: 66px;
+    margin-bottom: 18px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
 .movie-card__info {
     display: flex;
     justify-content: space-between;
