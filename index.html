@@ -1,518 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Orion Cinema — anime premieres, classics and special screenings on the big screen.">
-
-    <title>Orion Cinema</title>
-
+    <meta name="color-scheme" content="dark light">
+    <title>Orion Cinema — Anime on the big screen</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <script src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
         <div class="container header__container">
-            <a class="logo" href="./" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
-
-            <nav class="nav" aria-label="Main navigation">
+            <a class="logo" href="./index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
+            <nav class="nav" id="main-navigation" aria-label="Main navigation">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a class="nav__link" href="#featured">Movies</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a class="nav__link" href="#experience">Experience</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a class="nav__link" href="#events">Events</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a class="nav__link" href="./movies/">All movies</a>
-                    </li>
+                    <li><a class="nav__link" href="#featured">Movies</a></li>
+                    <li><a class="nav__link" href="#experience">Experience</a></li>
+                    <li><a class="nav__link" href="#events">Events</a></li>
+                    <li><a class="nav__link" href="./movies/index.html">All movies</a></li>
                 </ul>
             </nav>
-
             <div class="header__actions">
-
-                <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
                     <span class="theme-toggle__icon" aria-hidden="true">☾</span>
                 </button>
-
-                <button class="burger" type="button" aria-label="Open navigation menu" aria-expanded="false">
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
+                <button class="burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" aria-disabled="true">
+                    <span class="burger__line" aria-hidden="true"></span>
+                    <span class="burger__line" aria-hidden="true"></span>
+                    <span class="burger__line" aria-hidden="true"></span>
                 </button>
-
             </div>
-
         </div>
     </header>
-
-    <main>
-        <section class="hero">
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
             <div class="container hero__container">
-
                 <div class="hero__content">
-
-                    <p class="hero__eyebrow">
-                        Anime cinema experience
-                    </p>
-
-                    <h1 class="hero__title">
-                        Anime deserves
-                        <span class="hero__accent">the big screen.</span>
-                    </h1>
-
-                    <p class="hero__description">
-                        Discover anime premieres, legendary classics and exclusive
-                        screenings in a cinema made for fans.
-                    </p>
-
+                    <p class="hero__eyebrow">Anime cinema experience</p>
+                    <h1 class="hero__title" id="hero-title">Anime deserves <span class="hero__accent">the big screen.</span></h1>
+                    <p class="hero__description">Discover anime premieres, legendary classics and exclusive screenings in a cinema made for fans.</p>
                     <div class="hero__actions">
-
-                        <a class="button button--primary" href="./movies/">
-                            Explore movies
-                        </a>
-
-                        <a class="button button--secondary" href="#featured">
-                            What's on
-                        </a>
-
+                        <a class="button button--primary" href="./movies/index.html">Explore movies <span aria-hidden="true">↗</span></a>
+                        <a class="button button--secondary" href="#featured">What's on</a>
                     </div>
-
                 </div>
-
-
-                <div class="hero__visual">
-
+                <figure class="hero__visual">
                     <div class="hero__poster">
-
-                        <div class="hero__poster-glow"></div>
-
-                        <div class="hero__poster-content">
-                          <span class="hero__poster-label">
-                            ORION ORIGINAL
-                          </span>
-
-                            <div class="hero__poster-title">
-                                <span>MOONLIT</span>
-                                <strong>RONIN</strong>
-                            </div>
-
-                            <p class="hero__poster-meta">
-                                A film by Orion Cinema
-                            </p>
-                        </div>
-
+                        <img src="./assets/images/movies/moonlit-ronin.webp"
+                            alt="A cloaked swordsman overlooking misty mountains beneath a full moon." width="1024" height="1536" fetchpriority="high">
                     </div>
-
-                    <div class="hero__movie-info">
+                    <figcaption class="hero__movie-info">
                         <span class="hero__status">Now showing</span>
                         <strong class="hero__movie-title">Moonlit Ronin</strong>
-                    </div>
-
-                </div>
-
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-
-        <section class="featured section" id="featured">
+        <section class="featured section" id="featured" aria-labelledby="featured-title">
             <div class="container">
-
                 <div class="section-heading">
-
                     <div>
                         <p class="section-heading__eyebrow">Featured</p>
-
-                        <h2 class="section-heading__title">
-                            Stories worth seeing
-                            <span class="accent-text">together.</span>
-                        </h2>
+                        <h2 class="section-heading__title" id="featured-title">Stories worth seeing <span class="accent-text">together.</span></h2>
                     </div>
-
-                    <a class="section-heading__link" href="./movies/">
-                        View all movies
-                    </a>
-
+                    <a class="section-heading__link" href="./movies/index.html">View all movies <span aria-hidden="true">↗</span></a>
                 </div>
-
-
-                <div class="slider">
-
-                    <button
-                            class="slider__button slider__button--previous"
-                            type="button"
-                            aria-label="Previous movie"
-                    >
-                        ←
-                    </button>
-
-
+                <div class="slider" role="group" aria-label="Featured movies">
+                    <button class="slider__button slider__button--previous" type="button" aria-label="Previous movie" aria-disabled="true">←</button>
                     <div class="slider__track">
-
                         <article class="featured-card">
-                            <div class="featured-card__poster featured-card__poster--moonlit">
-                                <span class="featured-card__poster-label">ORION</span>
-
-                                <div class="featured-card__poster-name">
-                                    <span>Moonlit</span>
-                                    <strong>Ronin</strong>
-                                </div>
+                            <div class="featured-card__poster">
+                                <img src="./assets/images/movies/moonlit-ronin.webp"
+                            alt="A cloaked swordsman overlooking misty mountains beneath a full moon." width="1024" height="1536" loading="lazy" decoding="async">
                             </div>
-
                             <div class="featured-card__content">
                                 <div class="featured-card__top">
-                                    <p class="featured-card__meta">
-                                        Action • Fantasy
-                                    </p>
-
-                                    <span class="featured-card__rating">16+</span>
+                                    <p class="featured-card__meta">Action • Fantasy</p>
+                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>16+</span>
                                 </div>
-
-                                <h3 class="featured-card__title">
-                                    Moonlit Ronin
-                                </h3>
-
-                                <p class="featured-card__description">
-                                    A wandering swordsman follows a mysterious light across
-                                    a world caught between night and dawn.
-                                </p>
-
+                                <h3 class="featured-card__title">Moonlit Ronin</h3>
+                                <p class="featured-card__description">A wandering swordsman follows a mysterious light across a world caught between night and dawn.</p>
                                 <div class="featured-card__footer">
-                                    <span>1h 48min</span>
-                                    <span>From £9</span>
+                                    <span>1h 48min</span><span>From £9</span>
                                 </div>
                             </div>
                         </article>
-
-
                         <article class="featured-card">
-                            <div class="featured-card__poster featured-card__poster--tokyo">
-                                <span class="featured-card__poster-label">ORION</span>
-
-                                <div class="featured-card__poster-name">
-                                    <span>Tokyo</span>
-                                    <strong>Echo</strong>
-                                </div>
+                            <div class="featured-card__poster">
+                                <img src="./assets/images/movies/tokyo-echo.webp"
+                            alt="A woman on a rooftop watching a luminous radio tower above a futuristic city." width="1024" height="1536" loading="lazy" decoding="async">
                             </div>
-
                             <div class="featured-card__content">
                                 <div class="featured-card__top">
-                                    <p class="featured-card__meta">
-                                        Sci-Fi • Mystery
-                                    </p>
-
-                                    <span class="featured-card__rating">12+</span>
+                                    <p class="featured-card__meta">Sci-Fi • Mystery</p>
+                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
                                 </div>
-
-                                <h3 class="featured-card__title">
-                                    Tokyo Echo
-                                </h3>
-
-                                <p class="featured-card__description">
-                                    Strange broadcasts begin appearing across Tokyo,
-                                    repeating events that have not happened yet.
-                                </p>
-
+                                <h3 class="featured-card__title">Tokyo Echo</h3>
+                                <p class="featured-card__description">A late-night radio signal begins predicting events across the city before they happen.</p>
                                 <div class="featured-card__footer">
-                                    <span>2h 02min</span>
-                                    <span>From £10</span>
+                                    <span>2h 02min</span><span>From £10</span>
                                 </div>
                             </div>
                         </article>
-
-
                         <article class="featured-card">
-                            <div class="featured-card__poster featured-card__poster--crimson">
-                                <span class="featured-card__poster-label">ORION</span>
-
-                                <div class="featured-card__poster-name">
-                                    <span>Crimson</span>
-                                    <strong>Sky</strong>
-                                </div>
+                            <div class="featured-card__poster">
+                                <img src="./assets/images/movies/crimson-sky.webp"
+                            alt="Two pilots flying toward a floating city above sunset clouds." width="1024" height="1536" loading="lazy" decoding="async">
                             </div>
-
                             <div class="featured-card__content">
                                 <div class="featured-card__top">
-                                    <p class="featured-card__meta">
-                                        Adventure • Drama
-                                    </p>
-
-                                    <span class="featured-card__rating">12+</span>
+                                    <p class="featured-card__meta">Adventure • Drama</p>
+                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
                                 </div>
-
-                                <h3 class="featured-card__title">
-                                    Crimson Sky
-                                </h3>
-
-                                <p class="featured-card__description">
-                                    Two pilots cross forbidden skies in search of a
-                                    city believed to exist above the clouds.
-                                </p>
-
+                                <h3 class="featured-card__title">Crimson Sky</h3>
+                                <p class="featured-card__description">Two young pilots cross forbidden skies in search of a city hidden above the clouds.</p>
                                 <div class="featured-card__footer">
-                                    <span>1h 56min</span>
-                                    <span>From £9</span>
+                                    <span>1h 56min</span><span>From £9</span>
                                 </div>
                             </div>
                         </article>
-
                     </div>
-
-
-                    <button class="slider__button slider__button--next" type="button" aria-label="Next movie">→</button>
-
+                    <button class="slider__button slider__button--next" type="button" aria-label="Next movie" aria-disabled="true">→</button>
                 </div>
-
-
-                <div class="slider-pagination" aria-label="Slider pagination">
-                    <button class="slider-pagination__item slider-pagination__item--active" type="button" aria-label="Show movie 1"></button>
-
-                    <button class="slider-pagination__item" type="button" aria-label="Show movie 2"></button>
-
-                    <button class="slider-pagination__item" type="button" aria-label="Show movie 3"></button>
+                <div class="slider-pagination" role="group" aria-label="Slider pagination">
+                    <button class="slider-pagination__item slider-pagination__item--active" type="button" aria-label="Show movie 1" aria-current="true" aria-disabled="true"></button>
+                    <button class="slider-pagination__item" type="button" aria-label="Show movie 2" aria-disabled="true"></button>
+                    <button class="slider-pagination__item" type="button" aria-label="Show movie 3" aria-disabled="true"></button>
                 </div>
-
             </div>
         </section>
 
-        <section class="experience section" id="experience">
+        <section class="experience section" id="experience" aria-labelledby="experience-title">
             <div class="container">
-
                 <div class="section-heading">
-
                     <div>
-                        <p class="section-heading__eyebrow">
-                            The experience
-                        </p>
-
-                        <h2 class="section-heading__title">
-                            More than just
-                            <span class="accent-text">a screening.</span>
-                        </h2>
+                        <p class="section-heading__eyebrow">The experience</p>
+                        <h2 class="section-heading__title" id="experience-title">More than just <span class="accent-text">a screening.</span></h2>
                     </div>
-
                 </div>
-
-
                 <div class="experience__grid">
-
                     <article class="experience-card">
-                        <span class="experience-card__number">01</span>
-
-                        <h3 class="experience-card__title">
-                            Big screen
-                        </h3>
-
-                        <p class="experience-card__description">
-                            See every detail, every color and every frame the way
-                            it deserves to be seen.
-                        </p>
+                        <span class="experience-card__number" aria-hidden="true">01</span>
+                        <h3 class="experience-card__title">Big screen</h3>
+                        <p class="experience-card__description">See every detail, every color and every frame the way it deserves to be seen.</p>
                     </article>
-
-
                     <article class="experience-card">
-                        <span class="experience-card__number">02</span>
-
-                        <h3 class="experience-card__title">
-                            Immersive sound
-                        </h3>
-
-                        <p class="experience-card__description">
-                            Powerful surround sound brings soundtracks, battles and
-                            quiet moments to life.
-                        </p>
+                        <span class="experience-card__number" aria-hidden="true">02</span>
+                        <h3 class="experience-card__title">Immersive sound</h3>
+                        <p class="experience-card__description">Powerful surround sound brings soundtracks, battles and quiet moments to life.</p>
                     </article>
-
-
                     <article class="experience-card">
-                        <span class="experience-card__number">03</span>
-
-                        <h3 class="experience-card__title">
-                            Fan community
-                        </h3>
-
-                        <p class="experience-card__description">
-                            Premieres, themed nights and special events created for
-                            people who love anime.
-                        </p>
+                        <span class="experience-card__number" aria-hidden="true">03</span>
+                        <h3 class="experience-card__title">Fan community</h3>
+                        <p class="experience-card__description">Premieres, themed nights and special events created for people who love anime.</p>
                     </article>
-
                 </div>
-
             </div>
         </section>
 
-        <section class="events section" id="events">
+        <section class="events section" id="events" aria-labelledby="events-title">
             <div class="container">
-
                 <div class="section-heading">
-
                     <div>
-                        <p class="section-heading__eyebrow">
-                            Special events
-                        </p>
-
-                        <h2 class="section-heading__title">
-                            One night.
-                            <span class="accent-text">One universe.</span>
-                        </h2>
+                        <p class="section-heading__eyebrow">Special events</p>
+                        <h2 class="section-heading__title" id="events-title">One night. <span class="accent-text">One universe.</span></h2>
                     </div>
-
                 </div>
-
-
                 <div class="events__grid">
-
                     <article class="event-card event-card--large">
-
-                        <img class="event-card__image" src="./assets/images/events/anime-night.svg" alt="Anime marathon event">
-
-                        <div class="event-card__overlay">
-
-                            <p class="event-card__date">
-                                October 17
-                            </p>
-
-                            <h3 class="event-card__title">
-                                All Night Anime Marathon
-                            </h3>
-
-                            <p class="event-card__description">
-                                Four films. One screen. Until sunrise.
-                            </p>
-
+                        <div class="event-card__media">
+                            <img src="./assets/images/events/anime-night.webp"
+                            alt="Moviegoers in a violet cinema auditorium watching a luminous nebula." width="1024" height="1536" loading="lazy" decoding="async">
                         </div>
-
+                        <div class="event-card__content">
+                            <p class="event-card__date"><time datetime="2026-10-17">October 17</time></p>
+                            <h3 class="event-card__title">All Night Anime Marathon</h3>
+                            <p class="event-card__description">Four films. One screen. Until sunrise.</p>
+                        </div>
                     </article>
-
-
                     <article class="event-card">
-
-                        <img class="event-card__image" src="./assets/images/events/classics-night.svg" alt="Anime classics screening">
-
-                        <div class="event-card__overlay">
-
-                            <p class="event-card__date">
-                                October 24
-                            </p>
-
-                            <h3 class="event-card__title">
-                                Classics on Film
-                            </h3>
-
+                        <div class="event-card__media">
+                            <img src="./assets/images/events/classics-night.webp"
+                            alt="A vintage film projector casting a beam of warm light." width="1536" height="1024" loading="lazy" decoding="async">
                         </div>
-
+                        <div class="event-card__content">
+                            <p class="event-card__date"><time datetime="2026-10-24">October 24</time></p>
+                            <h3 class="event-card__title">Classics on Film</h3>
+                        </div>
                     </article>
-
-
                     <article class="event-card">
-
-                        <img class="event-card__image" src="./assets/images/events/premiere-night.svg" alt="Anime premiere screening">
-
-                        <div class="event-card__overlay">
-
-                            <p class="event-card__date">
-                                November 2
-                            </p>
-
-                            <h3 class="event-card__title">
-                                Premiere Night
-                            </h3>
-
+                        <div class="event-card__media">
+                            <img src="./assets/images/events/premiere-night.webp"
+                            alt="A red carpet leading to the warmly lit doors of an art deco cinema." width="1536" height="1024" loading="lazy" decoding="async">
                         </div>
-
+                        <div class="event-card__content">
+                            <p class="event-card__date"><time datetime="2026-11-02">November 2</time></p>
+                            <h3 class="event-card__title">Premiere Night</h3>
+                        </div>
                     </article>
-
                 </div>
-
             </div>
         </section>
 
-        <section class="cta section">
+        <section class="cta section" aria-labelledby="cta-title">
             <div class="container">
-
                 <div class="cta__content">
-
-                    <p class="cta__eyebrow">
-                        Your next story starts here
-                    </p>
-
-                    <h2 class="cta__title">
-                        Find your next movie.
-                    </h2>
-
-                    <a class="button button--primary" href="./movies/">
-                        Browse all movies
-                    </a>
-
+                    <p class="cta__eyebrow">Your next story starts here</p>
+                    <h2 class="cta__title" id="cta-title">Find your next movie.</h2>
+                    <a class="button button--primary" href="./movies/index.html">Browse all movies <span aria-hidden="true">↗</span></a>
                 </div>
-
             </div>
         </section>
-
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container">
-
             <div class="footer__top">
-
                 <div class="footer__brand">
-
-                    <a class="logo" href="./">
-                        ORION
-                        <span class="logo__accent">CINEMA</span>
-                    </a>
-
-                    <p class="footer__tagline">
-                        Anime belongs on the big screen.
-                    </p>
-
+                    <a class="logo" href="./index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
+                    <p class="footer__tagline">Anime belongs on the big screen.</p>
                 </div>
-
-
                 <nav class="footer__nav" aria-label="Footer navigation">
-
-                    <a href="./movies/">Movies</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#events">Events</a>
-
+                    <ul>
+                        <li><a href="./movies/index.html">All movies</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
                 </nav>
-
-
-                <div class="footer__contacts">
-
-                    <p>London, United Kingdom</p>
-
+                <address class="footer__contacts">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=London%2C%20United%20Kingdom" target="_blank" rel="noopener noreferrer">London, United Kingdom <span aria-hidden="true">↗</span></a>
                     <a href="mailto:hello@orioncinema.example">hello@orioncinema.example</a>
-
-                </div>
-
+                </address>
             </div>
-
-
             <div class="footer__bottom">
-
-                <p>
-                    © 2026 Orion Cinema
-                </p>
-
-                <a href="https://rs.school/" target="_blank" rel="noopener noreferrer">RS School</a>
-
+                <p>© 2026 Orion Cinema</p>
+                <a href="https://rs.school/" target="_blank" rel="noopener noreferrer">RS School <span aria-hidden="true">↗</span></a>
             </div>
-
         </div>
     </footer>
-
-
-    <script src="./js/main.js"></script>
 </body>
 </html>
