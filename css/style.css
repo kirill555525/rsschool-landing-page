@@ -1303,6 +1303,247 @@ body {
     color: var(--accent-primary);
 }
 
+/* =========================
+   CATALOG HERO
+========================= */
+
+.catalog-hero {
+    padding: 96px 0 48px;
+
+    background-color: var(--bg-primary);
+}
+
+.catalog-hero__eyebrow {
+    margin-bottom: 16px;
+
+    color: var(--accent-primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.catalog-hero__title {
+    max-width: 850px;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(56px, 8vw, 108px);
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+}
+
+.catalog-hero__description {
+    max-width: 620px;
+
+    color: var(--text-secondary);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CATALOG
+========================= */
+
+.catalog {
+    padding-top: 48px;
+
+    background-color: var(--bg-primary);
+}
+
+
+/* =========================
+   CATALOG TABS
+========================= */
+
+.catalog__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 48px;
+}
+
+.catalog__tab {
+    min-height: 46px;
+    padding: 0 20px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+
+    color: var(--text-secondary);
+    background-color: transparent;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+            color var(--transition),
+            background-color var(--transition),
+            border-color var(--transition),
+            transform var(--transition);
+}
+
+.catalog__tab:hover {
+    color: var(--text-primary);
+
+    border-color: var(--accent-primary);
+
+    transform: translateY(-2px);
+}
+
+.catalog__tab--active {
+    color: #ffffff;
+
+    border-color: transparent;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    var(--accent-primary),
+                    var(--accent-secondary)
+            );
+}
+
+
+/* =========================
+   MOVIE GRID
+========================= */
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+
+.movie-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+
+    background-color: var(--bg-card);
+
+    transition:
+            transform var(--transition),
+            border-color var(--transition),
+            box-shadow var(--transition);
+}
+
+.movie-card:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+
+    transform: translateY(-6px);
+
+    box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+
+.movie-card__poster {
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 2 / 3;
+
+    background-color: var(--bg-secondary);
+}
+
+.movie-card__poster img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-card__poster img {
+    transform: scale(1.04);
+}
+
+
+.movie-card__age {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    padding: 6px 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+
+    color: #ffffff;
+    background-color: rgba(10, 10, 15, 0.7);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.movie-card__content {
+    padding: 20px;
+}
+
+.movie-card__genre {
+    margin-bottom: 10px;
+
+    color: var(--accent-primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.movie-card__title {
+    margin-bottom: 18px;
+
+    font-size: 21px;
+    line-height: 1.15;
+}
+
+.movie-card__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+.movie-card__info span:last-child {
+    color: var(--text-primary);
+
+    font-weight: 700;
+}
+
+
+.catalog__more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 48px;
+}
+
+.catalog__more .button {
+    min-width: 160px;
+}
+
 .section-heading {
     display: flex;
     align-items: flex-end;
@@ -1620,6 +1861,64 @@ body {
     .footer__bottom {
         align-items: flex-start;
         flex-direction: column;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 850px) {
+    .catalog-hero {
+        padding: 72px 0 32px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .catalog-hero {
+        padding: 56px 0 24px;
+    }
+
+    .catalog-hero__title {
+        font-size: clamp(48px, 15vw, 70px);
+    }
+
+    .catalog-hero__description {
+        font-size: 16px;
+    }
+
+    .catalog__tabs {
+        gap: 8px;
+
+        margin-bottom: 36px;
+    }
+
+    .catalog__tab {
+        flex: 1 1 auto;
+
+        min-height: 42px;
+        padding: 0 14px;
+
+        font-size: 12px;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card {
+        max-width: 420px;
+
+        margin-inline: auto;
     }
 }
 
