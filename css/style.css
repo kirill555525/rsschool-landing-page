@@ -89,6 +89,24 @@ body {
     transition: color var(--transition), background-color var(--transition);
 }
 
+.header,
+.featured,
+.experience,
+.events,
+.cta,
+.footer,
+.catalog,
+.catalog-hero,
+.featured-card,
+.experience-card,
+.movie-card,
+.theme-toggle {
+    transition:
+            color var(--transition),
+            background-color var(--transition),
+            border-color var(--transition);
+}
+
 .container {
     width: min(
             calc(100% - 40px),
