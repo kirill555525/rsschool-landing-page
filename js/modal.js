@@ -51,7 +51,6 @@ export function createMovieDialog() {
 
     dialog.addEventListener('keydown', (event) => {
         if (event.key !== 'Tab') return;
-        // Each radio group has one Tab stop; arrow keys select its other values.
         const stops = [close, ...form.querySelectorAll('input:checked')];
         const first = stops[0];
         const last = stops.at(-1);
@@ -75,7 +74,6 @@ export function createMovieDialog() {
         startedOutside = false;
     });
     dialog.addEventListener('close', () => {
-        // A new opening may precede a queued close event from the previous one.
         if (dialog.open) return;
         unlockScroll('movie-dialog');
         const replacement = [...document.querySelectorAll('[data-movie-id]')]

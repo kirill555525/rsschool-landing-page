@@ -33,6 +33,7 @@ export function createMovieCard(movie, openMovie, featured = false) {
     card.querySelector('.card-duration').textContent = movie.duration;
     card.querySelector('.card-price').textContent = `From ${money(movie.price)}`;
 
+    // The stretched button and article handler cover image, title and blank areas.
     card.addEventListener('click', () => openMovie(movie, button));
     return card;
 }
