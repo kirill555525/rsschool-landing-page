@@ -10,6 +10,7 @@
     <script src="./js/main.js"></script>
     <script type="module" src="./js/app.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="js/menu.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -71,67 +72,15 @@
                     <a class="section-heading__link" href="./movies/index.html">View all movies <span aria-hidden="true">↗</span></a>
                 </div>
                 <div class="slider" role="group" aria-label="Featured movies">
-                    <button class="slider__button slider__button--previous" type="button" aria-label="Previous movie" aria-disabled="true">←</button>
-                    <div class="slider__track">
-                        <article class="featured-card">
-                            <div class="featured-card__poster">
-                                <img src="./assets/images/movies/moonlit-ronin.webp"
-                            alt="A cloaked swordsman overlooking misty mountains beneath a full moon." width="1024" height="1536" loading="lazy" decoding="async">
-                            </div>
-                            <div class="featured-card__content">
-                                <div class="featured-card__top">
-                                    <p class="featured-card__meta">Action • Fantasy</p>
-                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>16+</span>
-                                </div>
-                                <h3 class="featured-card__title">Moonlit Ronin</h3>
-                                <p class="featured-card__description">A wandering swordsman follows a mysterious light across a world caught between night and dawn.</p>
-                                <div class="featured-card__footer">
-                                    <span>1h 48min</span><span>From £9</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="featured-card">
-                            <div class="featured-card__poster">
-                                <img src="./assets/images/movies/tokyo-echo.webp"
-                            alt="A woman on a rooftop watching a luminous radio tower above a futuristic city." width="1024" height="1536" loading="lazy" decoding="async">
-                            </div>
-                            <div class="featured-card__content">
-                                <div class="featured-card__top">
-                                    <p class="featured-card__meta">Sci-Fi • Mystery</p>
-                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                                </div>
-                                <h3 class="featured-card__title">Tokyo Echo</h3>
-                                <p class="featured-card__description">A late-night radio signal begins predicting events across the city before they happen.</p>
-                                <div class="featured-card__footer">
-                                    <span>2h 02min</span><span>From £10</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="featured-card">
-                            <div class="featured-card__poster">
-                                <img src="./assets/images/movies/crimson-sky.webp"
-                            alt="Two pilots flying toward a floating city above sunset clouds." width="1024" height="1536" loading="lazy" decoding="async">
-                            </div>
-                            <div class="featured-card__content">
-                                <div class="featured-card__top">
-                                    <p class="featured-card__meta">Adventure • Drama</p>
-                                    <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                                </div>
-                                <h3 class="featured-card__title">Crimson Sky</h3>
-                                <p class="featured-card__description">Two young pilots cross forbidden skies in search of a city hidden above the clouds.</p>
-                                <div class="featured-card__footer">
-                                    <span>1h 56min</span><span>From £9</span>
-                                </div>
-                            </div>
-                        </article>
+                    <button class="slider__button slider__button--previous" type="button" aria-label="Previous movies" aria-controls="featured-slides">←</button>
+                    <div class="slider__viewport" id="featured-slides" role="group" tabindex="0" aria-label="Featured movies. Use left and right arrow keys to browse.">
+                        <div class="slider__track"></div>
                     </div>
-                    <button class="slider__button slider__button--next" type="button" aria-label="Next movie" aria-disabled="true">→</button>
+                    <button class="slider__button slider__button--next" type="button" aria-label="Next movies" aria-controls="featured-slides">→</button>
                 </div>
-                <div class="slider-pagination" role="group" aria-label="Slider pagination">
-                    <button class="slider-pagination__item slider-pagination__item--active" type="button" aria-label="Show movie 1" aria-current="true" aria-disabled="true"></button>
-                    <button class="slider-pagination__item" type="button" aria-label="Show movie 2" aria-disabled="true"></button>
-                    <button class="slider-pagination__item" type="button" aria-label="Show movie 3" aria-disabled="true"></button>
-                </div>
+                <div class="slider-pagination" role="group" aria-label="Slider pagination"></div>
+                <p class="visually-hidden slider__status" role="status" aria-live="polite"></p>
+                <noscript><p class="no-script">Enable JavaScript to browse the featured movies.</p></noscript>
             </div>
         </section>
 
