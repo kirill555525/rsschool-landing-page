@@ -8,219 +8,85 @@
     <title>Movies | Orion Cinema</title>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <script src="../js/main.js"></script>
+    <script type="module" src="../js/app.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="header">
-        <div class="container header__container">
-            <a class="logo" href="../index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
-            <nav class="nav" id="main-navigation" aria-label="Main navigation">
-                <ul class="nav__list">
-                    <li><a class="nav__link" href="../index.html#featured">Movies</a></li>
-                    <li><a class="nav__link" href="../index.html#experience">Experience</a></li>
-                    <li><a class="nav__link" href="../index.html#events">Events</a></li>
-                    <li><a class="nav__link nav__link--active" aria-current="page" href="index.html">All movies</a></li>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="header">
+    <div class="container header__container">
+        <a class="logo" href="../index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
+        <nav class="nav" id="main-navigation" aria-label="Main navigation">
+            <ul class="nav__list">
+                <li><a class="nav__link" href="../index.html#featured">Movies</a></li>
+                <li><a class="nav__link" href="../index.html#experience">Experience</a></li>
+                <li><a class="nav__link" href="../index.html#events">Events</a></li>
+                <li><a class="nav__link nav__link--active" aria-current="page" href="index.html">All movies</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+                <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+            </button>
+            <button class="burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                <span class="burger__line" aria-hidden="true"></span>
+                <span class="burger__line" aria-hidden="true"></span>
+                <span class="burger__line" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</header>
+<main id="main-content">
+    <section class="catalog-hero" aria-labelledby="catalog-title">
+        <div class="container">
+            <p class="catalog-hero__eyebrow">Orion selection</p>
+            <h1 class="catalog-hero__title" id="catalog-title">Find your next <span class="accent-text">story.</span></h1>
+            <p class="catalog-hero__description">From new premieres to cult classics and all-night marathons — choose what belongs on the big screen.</p>
+        </div>
+    </section>
+    <section class="catalog section" aria-labelledby="category-title">
+        <div class="container">
+            <div class="catalog__tabs" role="group" aria-label="Movie categories">
+                <button class="catalog__tab catalog__tab--active" type="button" aria-pressed="true" data-category="now-showing" aria-controls="movie-grid">Now Showing</button>
+                <button class="catalog__tab" type="button" aria-pressed="false" data-category="coming-soon" aria-controls="movie-grid">Coming Soon</button>
+                <button class="catalog__tab" type="button" aria-pressed="false" data-category="marathons" aria-controls="movie-grid">Marathons</button>
+            </div>
+            <h2 class="visually-hidden" id="category-title">Now Showing</h2>
+            <p class="catalog__status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div class="movie-grid" id="movie-grid"></div>
+            <noscript><p class="no-script">Enable JavaScript to browse movies and choose a screening.</p></noscript>
+            <div class="catalog__more">
+                <button class="button button--secondary" type="button" aria-controls="movie-grid">Show more <span aria-hidden="true">↓</span></button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="contacts">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a class="logo" href="../index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
+                <p class="footer__tagline">Anime belongs on the big screen.</p>
+            </div>
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">All movies</a></li>
+                    <li><a href="../index.html#experience">Experience</a></li>
+                    <li><a href="../index.html#events">Events</a></li>
                 </ul>
             </nav>
-            <div class="header__actions">
-                <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
-                    <span class="theme-toggle__icon" aria-hidden="true">☾</span>
-                </button>
-                <button class="burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" aria-disabled="true">
-                    <span class="burger__line" aria-hidden="true"></span>
-                    <span class="burger__line" aria-hidden="true"></span>
-                    <span class="burger__line" aria-hidden="true"></span>
-                </button>
-            </div>
+            <address class="footer__contacts">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=London%2C%20United%20Kingdom" target="_blank" rel="noopener noreferrer">London, United Kingdom <span aria-hidden="true">↗</span></a>
+                <a href="mailto:hello@orioncinema.example">hello@orioncinema.example</a>
+            </address>
         </div>
-    </header>
-    <main id="main-content">
-        <section class="catalog-hero" aria-labelledby="catalog-title">
-            <div class="container">
-                <p class="catalog-hero__eyebrow">Orion selection</p>
-                <h1 class="catalog-hero__title" id="catalog-title">Find your next <span class="accent-text">story.</span></h1>
-                <p class="catalog-hero__description">From new premieres to cult classics and all-night marathons — choose what belongs on the big screen.</p>
-            </div>
-        </section>
-        <section class="catalog section" aria-labelledby="now-showing-title">
-            <div class="container">
-                <div class="catalog__tabs" role="group" aria-label="Movie categories">
-                    <button class="catalog__tab catalog__tab--active" type="button" aria-pressed="true" aria-disabled="true">Now Showing</button>
-                    <button class="catalog__tab" type="button" aria-pressed="false" aria-disabled="true">Coming Soon</button>
-                    <button class="catalog__tab" type="button" aria-pressed="false" aria-disabled="true">Marathons</button>
-                </div>
-                <h2 class="visually-hidden" id="now-showing-title">Now showing — 8 movies</h2>
-                <div class="movie-grid">
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/moonlit-ronin.webp"
-                            alt="A cloaked swordsman overlooking misty mountains beneath a full moon." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Action • Fantasy</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>16+</span>
-                            </div>
-                            <h3 class="movie-card__title">Moonlit Ronin</h3>
-                            <p class="movie-card__description">A wandering swordsman follows a mysterious light across a world caught between night and dawn.</p>
-                            <div class="movie-card__info">
-                                <span>1h 48min</span><span>From £9</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/tokyo-echo.webp"
-                            alt="A woman on a rooftop watching a luminous radio tower above a futuristic city." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Sci-Fi • Mystery</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                            </div>
-                            <h3 class="movie-card__title">Tokyo Echo</h3>
-                            <p class="movie-card__description">A late-night radio signal begins predicting events across the city before they happen.</p>
-                            <div class="movie-card__info">
-                                <span>2h 02min</span><span>From £10</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/crimson-sky.webp"
-                            alt="Two pilots flying toward a floating city above sunset clouds." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Adventure • Drama</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                            </div>
-                            <h3 class="movie-card__title">Crimson Sky</h3>
-                            <p class="movie-card__description">Two young pilots cross forbidden skies in search of a city hidden above the clouds.</p>
-                            <div class="movie-card__info">
-                                <span>1h 56min</span><span>From £9</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/last-sakura.webp"
-                            alt="Two friends beside a river beneath a blossoming cherry tree." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Romance • Drama</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                            </div>
-                            <h3 class="movie-card__title">Last Sakura</h3>
-                            <p class="movie-card__description">Two friends reunite for one final spring while an old promise quietly changes their future.</p>
-                            <div class="movie-card__info">
-                                <span>1h 42min</span><span>From £8</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/ghost-signal.webp"
-                            alt="A vintage radio glowing in a deserted railway signal room at night." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Horror • Mystery</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>16+</span>
-                            </div>
-                            <h3 class="movie-card__title">Ghost Signal</h3>
-                            <p class="movie-card__description">A forgotten receiver starts carrying messages from a station that officially never existed.</p>
-                            <div class="movie-card__info">
-                                <span>1h 51min</span><span>From £10</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/blue-horizon.webp"
-                            alt="A sailboat approaching a green island above a turquoise sea." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Adventure • Family</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>6+</span>
-                            </div>
-                            <h3 class="movie-card__title">Blue Horizon</h3>
-                            <p class="movie-card__description">A seaside journey turns into a search for a legendary island beyond the edge of every map.</p>
-                            <div class="movie-card__info">
-                                <span>1h 35min</span><span>From £8</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/paper-moon.webp"
-                            alt="A young woman releasing glowing paper cranes into the moonlight." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Fantasy • Drama</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>12+</span>
-                            </div>
-                            <h3 class="movie-card__title">Paper Moon</h3>
-                            <p class="movie-card__description">A student discovers that the stories she folds from paper continue living after midnight.</p>
-                            <div class="movie-card__info">
-                                <span>1h 46min</span><span>From £9</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="movie-card">
-                        <div class="movie-card__poster">
-                            <img src="../assets/images/movies/neon-genesis.webp"
-                            alt="A giant mechanical guardian and a tiny astronaut above the Earth." width="1024" height="1536" loading="lazy" decoding="async">
-                        </div>
-                        <div class="movie-card__content">
-                            <div class="movie-card__top">
-                                <p class="movie-card__genre">Sci-Fi • Action</p>
-                                <span class="age-rating"><span class="visually-hidden">Age rating </span>16+</span>
-                            </div>
-                            <h3 class="movie-card__title">Neon Genesis</h3>
-                            <p class="movie-card__description">Humanity&#x27;s last orbital city wakes an ancient machine as the stars begin disappearing.</p>
-                            <div class="movie-card__info">
-                                <span>2h 12min</span><span>From £11</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="catalog__more">
-                    <button class="button button--secondary" type="button" aria-disabled="true">Show more <span aria-hidden="true">↓</span></button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" id="contacts">
-        <div class="container">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <a class="logo" href="../index.html" aria-label="Orion Cinema home">ORION<span class="logo__accent">CINEMA</span></a>
-                    <p class="footer__tagline">Anime belongs on the big screen.</p>
-                </div>
-                <nav class="footer__nav" aria-label="Footer navigation">
-                    <ul>
-                        <li><a href="index.html">All movies</a></li>
-                        <li><a href="../index.html#experience">Experience</a></li>
-                        <li><a href="../index.html#events">Events</a></li>
-                    </ul>
-                </nav>
-                <address class="footer__contacts">
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=London%2C%20United%20Kingdom" target="_blank" rel="noopener noreferrer">London, United Kingdom <span aria-hidden="true">↗</span></a>
-                    <a href="mailto:hello@orioncinema.example">hello@orioncinema.example</a>
-                </address>
-            </div>
-            <div class="footer__bottom">
-                <p>© 2026 Orion Cinema</p>
-                <a href="https://github.com/kirill555525" target="_blank" rel="noopener noreferrer">Author</a>
-                <a href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer">RS School <span aria-hidden="true">↗</span></a>
-            </div>
+        <div class="footer__bottom">
+            <p>© 2026 Orion Cinema</p>
+            <a href="https://github.com/kirill555525" target="_blank" rel="noopener noreferrer">Author</a>
+            <a href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer">RS School <span aria-hidden="true">↗</span></a>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
